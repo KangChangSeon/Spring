@@ -15,6 +15,7 @@ public enum TodoService {
         System.out.println("DEBUG... " + todoDTO);
     }
 
+    //Todo 전체 리스트 반환 기능
     public List<TodoDTO> getList(){
         List<TodoDTO> todoDTOList = IntStream.range(0,10).mapToObj(i -> {
           TodoDTO todoDTO = new TodoDTO();
@@ -25,6 +26,17 @@ public enum TodoService {
           return todoDTO;
         }).collect(Collectors.toList());
         return todoDTOList;
+    }
+
+    //사용자가 선택한 Todo 1개 반환하는 기능
+    public TodoDTO get(Long tno){
+        TodoDTO dto = new TodoDTO();
+        dto.setTno(tno);
+        dto.setDuedate(LocalDateTime.now());
+        dto.setTitle("Sample DTO");
+        dto.setFinished(true);
+
+        return dto;
     }
 
 }

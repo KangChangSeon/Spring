@@ -3,7 +3,7 @@ package com.ssg.w1.todo.dto;
 import java.time.LocalDateTime;
 
 public class TodoDTO {
-    private long tno;
+    private Long tno;
     private String title;
     private LocalDateTime duedate;
     private boolean finished;
